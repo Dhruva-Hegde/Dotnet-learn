@@ -1,19 +1,16 @@
-﻿using System;
-
-class Class3 {
+﻿class Program {
     static void Main(string[] args) {
-        string?[] cars = new string?[4]; // Use 'string?' to allow null
+        string?[] carNames = new string?[4];
 
-        for (int i = 0; i < cars.Length; i++) {
-            Console.Write("\tElement[" + i + "]: ");
-            string? input = Console.ReadLine(); // Read a nullable string
-            cars[i] = input; // Assign the potentially nullable input to the array
+        for (int i = 0; i < carNames.Length; i++) {
+            Console.Write($"\tEnter Car Name {i + 1}: ");
+            carNames[i] = Console.ReadLine();
         }
 
-        Console.WriteLine("List of cars:");
-        foreach (string? car in cars) {
-            if (!string.IsNullOrEmpty(car)) {
-                Console.WriteLine(car); // Print the car name if it's not null or empty
+        Console.WriteLine("List of Cars:");
+        foreach (string? carName in carNames) {
+            if (!string.IsNullOrWhiteSpace(carName)) {
+                Console.WriteLine(carName);
             }
         }
 
